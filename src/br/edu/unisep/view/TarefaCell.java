@@ -7,7 +7,6 @@ import javafx.scene.control.ListCell;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
-import java.text.DateFormat;
 import java.time.format.DateTimeFormatter;
 
 public class TarefaCell extends ListCell<TarefaVO> {

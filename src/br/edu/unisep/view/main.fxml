@@ -19,7 +19,7 @@
             </Label>
             <TextField fx:id="txtEmail" prefHeight="27.0" prefWidth="180.0" promptText="login" />
             <PasswordField fx:id="txtSenha" prefHeight="27.0" prefWidth="180.0" promptText="senha" />
-            <Button defaultButton="true" mnemonicParsing="false" prefHeight="27.0" prefWidth="180.0" style="-fx-background-color: #333333;" text="entrar" textFill="WHITE" />
+            <Button defaultButton="true" mnemonicParsing="false" onAction="#entrar" prefHeight="27.0" prefWidth="180.0" style="-fx-background-color: #333333;" text="entrar" textFill="WHITE" />
          </children>
       </VBox>
    </children>
