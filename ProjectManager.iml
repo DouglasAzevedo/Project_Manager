@@ -7,10 +7,10 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="JavaFX" level="application" />
     <orderEntry type="library" name="Hibernate" level="application" />
+    <orderEntry type="library" name="JavaFX" level="application" />
     <orderEntry type="library" name="lib_unisepfx" level="application" />
-    <orderEntry type="library" name="Postgres" level="application" />
     <orderEntry type="library" name="CommonsCodec" level="application" />
+    <orderEntry type="library" name="Postgres" level="application" />
   </component>
 </module>

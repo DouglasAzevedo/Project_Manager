@@ -3,16 +3,21 @@ package br.edu.unisep.model.vo;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "cliente")
+@Table(name="cliente")
 public class ClienteVO {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_cliente")
+    @Column(name="id_cliente")
     private Integer id;
 
-    @Column(name = "ds_cliente")
+    @Column(name="ds_cliente")
     private String nome;
+
+    @Override
+    public String toString() {
+        return nome;
+    }
 
     public Integer getId() {
         return id;
@@ -28,10 +33,5 @@ public class ClienteVO {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    @Override
-    public String toString() {
-        return nome;
     }
 }

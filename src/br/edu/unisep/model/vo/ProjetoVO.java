@@ -4,30 +4,30 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "projeto")
+@Table(name="projeto")
 public class ProjetoVO {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_projeto")
+    @Column(name="id_projeto")
     private Integer id;
 
-    @Column(name = "ds_titulo")
+    @Column(name="ds_titulo")
     private String titulo;
 
-    @Column(name = "ds_projeto")
+    @Column(name="ds_projeto")
     private String descricao;
 
-    @Column(name = "dt_inicio")
+    @Column(name="dt_inicio")
     private LocalDate inicio;
 
     @OneToOne
-    @JoinColumn(name = "id_cliente")
+    @JoinColumn(name="id_cliente")
     private ClienteVO cliente;
 
     @OneToOne
-    @JoinColumn(name = "id_gerente",referencedColumnName = "id_usuario")
-    private  UsuarioVO gerente;
+    @JoinColumn(name="id_gerente", referencedColumnName="id_usuario")
+    private UsuarioVO gerente;
 
     public Integer getId() {
         return id;

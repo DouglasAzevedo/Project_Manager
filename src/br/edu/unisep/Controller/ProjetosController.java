@@ -15,18 +15,18 @@ import java.time.LocalDate;
 
 public class ProjetosController extends AppController {
 
-    @FXML private TableView<ProjetoVO> tabProjetos;
+    @FXML private TableView<ProjetoVO> tabProjeto;
 
-    @FXColumn(property = "titulo")
-    @FXML private TableColumn<ProjetoVO,String> colTitulo;
+    @FXColumn(property = "titulo", percentWidth = 30)
+    @FXML private TableColumn<ProjetoVO, String> colTitulo;
 
-    @FXColumn(property = "cliente")
-    @FXML private TableColumn<ProjetoVO,String> colCliente;
+    @FXColumn(property = "cliente", percentWidth = 25)
+    @FXML private TableColumn<ProjetoVO, String> colCliente;
 
-    @FXColumn(property = "gerente")
-    @FXML private TableColumn<ProjetoVO,String> colGerente;
+    @FXColumn(property = "gerente", percentWidth = 25)
+    @FXML private TableColumn<ProjetoVO, String> colGerente;
 
-    @FXColumn(property = "inicio", dateFormat = "dd/MM/yyyy")
+    @FXColumn(property = "inicio", dateFormat = "dd/MM/yyyy", percentWidth = 20)
     @FXML private TableColumn<ProjetoVO, LocalDate> colInicio;
 
     private ObservableList<ProjetoVO> projetos;
@@ -35,17 +35,17 @@ public class ProjetosController extends AppController {
     @Override
     protected void onInit() {
         projetos = FXCollections.observableArrayList();
-        tabProjetos.setItems(projetos);
+        tabProjeto.setItems(projetos);
 
         listar();
     }
 
-    public void listar() {
-        var list = dao.listar(ProjetoVO.class);
-        projetos.setAll(list);
+    public void listar () {
+        var lista = dao.listar(ProjetoVO.class);
+        projetos.setAll(lista);
     }
 
     public void abrirNovo(ActionEvent event){
-        openModal("../view/novoProjeto.fxml",this::listar);
+        openModal("../view/NovoProjeto.fxml", this::listar);
     }
 }

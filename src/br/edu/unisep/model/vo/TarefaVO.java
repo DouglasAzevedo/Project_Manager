@@ -3,7 +3,6 @@ package br.edu.unisep.model.vo;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-
 @Entity
 @Table(name = "tarefa")
 public class TarefaVO {
@@ -21,8 +20,8 @@ public class TarefaVO {
     private ProjetoVO projeto;
 
     @OneToOne
-    @JoinColumn(name = "id_responsavel",referencedColumnName = "id_usuario")
-    private UsuarioVO responsavel;
+    @JoinColumn(name = "id_responsavel", referencedColumnName = "id_usuario")
+    private UsuarioVO usuario;
 
     @Column(name = "tp_status")
     private Integer status;
@@ -32,6 +31,7 @@ public class TarefaVO {
 
     @Column(name = "dt_termino")
     private LocalDateTime termino;
+
 
     public Integer getId() {
         return id;
@@ -58,11 +58,11 @@ public class TarefaVO {
     }
 
     public UsuarioVO getUsuario() {
-        return responsavel;
+        return usuario;
     }
 
     public void setUsuario(UsuarioVO usuario) {
-        this.responsavel = usuario;
+        this.usuario = usuario;
     }
 
     public Integer getStatus() {

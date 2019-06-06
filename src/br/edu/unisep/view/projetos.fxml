@@ -8,7 +8,7 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.unisep.Controller.ProjetosController">
    <children>
-      <TableView fx:id="tabProjetos" layoutX="86.0" layoutY="14.0" prefHeight="200.0" prefWidth="478.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+      <TableView fx:id="tabProjeto" layoutX="14.0" layoutY="14.0" prefHeight="328.0" prefWidth="600.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
         <columns>
           <TableColumn fx:id="colTitulo" prefWidth="75.0" text="Titulo" />
           <TableColumn fx:id="colCliente" prefWidth="75.0" text="Cliente" />
@@ -19,6 +19,6 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <Button layoutX="14.0" layoutY="350.0" mnemonicParsing="false" onAction="#abrirNovo" text="Novo Projeto" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" />
+      <Button layoutX="14.0" layoutY="360.0" mnemonicParsing="false" onAction="#abrirNovo" text="Novo Projeto" AnchorPane.bottomAnchor="14.399999999999999" AnchorPane.leftAnchor="14.0" />
    </children>
 </AnchorPane>

@@ -1,22 +1,33 @@
 package br.edu.unisep.model.vo;
 
+import javax.annotation.processing.Generated;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "usuario")
+@Table(name="usuario")
 public class UsuarioVO {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_usuario")
+    @Column(name="id_usuario")
     private Integer id;
-    @Column(name = "ds_nome")
+
+    @Column(name="ds_nome")
     private String nome;
-    @Column(name = "ds_email")
+
+    @Column(name="ds_email")
     private String email;
-    @Column(name = "ds_senha")
+
+    @Column(name="ds_senha")
     private String senha;
-    @Column(name = "tp_usuario")
+
+    @Column(name="tp_usuario")
     private Integer tipo;
+
+    @Override
+    public String toString() {
+        return nome;
+    }
 
     public Integer getId() {
         return id;
@@ -56,9 +67,5 @@ public class UsuarioVO {
 
     public void setTipo(Integer tipo) {
         this.tipo = tipo;
-    }
-    @Override
-    public String toString() {
-        return nome;
     }
 }

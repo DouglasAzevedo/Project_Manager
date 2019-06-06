@@ -1,6 +1,5 @@
 package br.edu.unisep.Controller;
 
-
 import br.edu.unisep.fx.controller.ModalController;
 import br.edu.unisep.hibernate.GenericDAO;
 import br.edu.unisep.model.dao.UsuarioDAO;
@@ -23,8 +22,7 @@ public class NovoProjetoController extends ModalController {
     @FXML private TextArea txtDescricao;
 
     @FXML private ChoiceBox<ClienteVO> cmbCliente;
-
-    @FXML private ChoiceBox<UsuarioVO> cmbGerentes;
+    @FXML private ChoiceBox<UsuarioVO> cmbGerente;
 
     @FXML private DatePicker txtInicio;
 
@@ -36,36 +34,38 @@ public class NovoProjetoController extends ModalController {
 
         listarClientes();
         listarGerentes();
+
     }
 
-    private void listarClientes(){
-       var dao = new GenericDAO<ClienteVO>();
-       var lst = dao.listar(ClienteVO.class);
+    private void listarClientes (){
+        var dao = new GenericDAO<ClienteVO>();
+        var lista = dao.listar(ClienteVO.class);
 
-        clientes = FXCollections.observableArrayList(lst);
+        clientes = FXCollections.observableArrayList(lista);
         cmbCliente.setItems(clientes);
     }
 
     private void listarGerentes(){
         var dao = new UsuarioDAO();
-        var lst = dao.listarPorTipo(2);
+        var lista = dao.listarPorTipo(2);
 
-        gerentes = FXCollections.observableArrayList(lst);
-        cmbGerentes.setItems(gerentes);
+        gerentes = FXCollections.observableArrayList(lista);
+        cmbGerente.setItems(gerentes);
     }
 
-    public void salvar(ActionEvent event){
-        var proj = new ProjetoVO();
+    public void salvar (ActionEvent event){
+        var projeto = new ProjetoVO();
 
-        proj.setTitulo(txtTitulo.getText());
-        proj.setDescricao(txtDescricao.getText());
-        proj.setInicio(txtInicio.getValue());
+        projeto.setTitulo(txtTitulo.getText());
+        projeto.setDescricao(txtDescricao.getText());
+        projeto.setInicio(txtInicio.getValue());
 
-        proj.setCliente(cmbCliente.getValue());
-        proj.setGerente(cmbGerentes.getValue());
+        projeto.setCliente(cmbCliente.getValue());
+        projeto.setGerente(cmbGerente.getValue());
 
         var dao = new GenericDAO<ProjetoVO>();
-        dao.salvar(proj);
+
+        dao.salvar(projeto);
 
         closeModal();
     }

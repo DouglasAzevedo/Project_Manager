@@ -9,14 +9,12 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 
-
 public class HomeController extends AppController {
 
-    @FXML private AnchorPane conteudo;
+    @FXML private AnchorPane container;
 
-    @FXML private Label titulo;
-    @FXML private Label nomeUsuario;
-
+    @FXML private Label txtPagina;
+    @FXML private Label txtUsuario;
 
     @FXML private ImageView imgProjetos;
     @FXML private ImageView imgUsuarios;
@@ -25,38 +23,30 @@ public class HomeController extends AppController {
 
     @Override
     protected void onInit() {
-        configurarMenu();
-
-        if (UsuarioUtils.getUsuario().getTipo()==2){
-            titulo.setText("Meus Projetos");
-            openScene(conteudo,"../view/meusProjetos.fxml");
+        if (UsuarioUtils.getUsuario().getTipo() == 2){
+            txtPagina.setText("Meus Projetos");
+            openScene(container, "../view/meusProjetos.fxml");
         }
+        configurarMenu();
     }
 
-    public void configurarMenu(){
+    public void abrirProjetos (MouseEvent event){
+        txtPagina.setText("Projetos");
+        openScene(container, "../view/Projetos.fxml");
+    }
+
+    private void configurarMenu(){
         var usuario = UsuarioUtils.getUsuario();
-        if(usuario.getTipo() != 1){
+
+        txtUsuario.setText(usuario.getNome());
+
+        if (usuario.getTipo() != 1){
             menu.getChildren().remove(imgProjetos);
             menu.getChildren().remove(imgUsuarios);
         }
-        var tipo = "";
-        if(usuario.getTipo() == 2){
-            tipo = "Administrador";
-        }else if (usuario.getTipo() == 2){
-            tipo = "Gerente de Projetos";
-        }else{
-            tipo = "Desenvolvedor";
-        }
-
-        nomeUsuario.setText("Olá, " + usuario.getNome() + "\n" + tipo);
     }
 
-    public void logout(MouseEvent event){
+    public void sair (MouseEvent event){
         System.exit(0);
-    }
-
-    public void abrirProjetos(MouseEvent event){
-        titulo.setText("Projetos");
-        openScene(conteudo,"../view/lprojetos.fxml");
     }
 }
