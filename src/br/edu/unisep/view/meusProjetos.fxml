@@ -19,13 +19,13 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <ListView fx:id="lstProjetos" onMouseClicked="#listarTarefa" prefHeight="200.0" prefWidth="200.0" />
-            <ListView fx:id="lstTarefas" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" />
+            <ListView fx:id="listTarefas" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" />
+            <ListView fx:id="listProjetos" layoutX="230.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" />
          </children>
       </GridPane>
       <HBox layoutX="77.0" layoutY="316.0" prefHeight="22.0" prefWidth="572.0" spacing="15.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
          <children>
-            <Button mnemonicParsing="false" text="Equipe" />
+            <Button mnemonicParsing="false" onAction="#abrirEquipe" text="Equipe" />
             <Button mnemonicParsing="false" text="Nova Tarefa" />
          </children>
       </HBox>

@@ -1,4 +1,11 @@
 package br.edu.unisep.Controller;
 
-public class EquipeController {
+import br.edu.unisep.fx.controller.ModalController;
+
+public class EquipeController extends ModalController {
+
+    @Override
+    protected void onModalInit() {
+
+    }
 }

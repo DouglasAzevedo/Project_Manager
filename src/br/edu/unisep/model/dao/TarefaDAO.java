@@ -11,7 +11,7 @@ import java.util.List;
 
 public class TarefaDAO extends GenericDAO<TarefaVO> {
 
-    public List<TarefaVO> listarPorProjeto(ProjetoVO projeto){
+    public List<TarefaVO> listar(ProjetoVO projeto){
         var session = HibernateSessionFactory.getSession();
 
         var q = session.createQuery("from TarefaVO where id_projeto = :PROJETO", TarefaVO.class);
