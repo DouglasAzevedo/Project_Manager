@@ -44,7 +44,6 @@ public class MeusProjetosController extends AppController {
         listTarefas.setItems(tarefas);
     }
 
-
     private void listarProjetos() {
         var dao = new ProjetoDAO();
         var lista = dao.listarPorGerente(UsuarioUtils.getUsuario());
@@ -56,7 +55,6 @@ public class MeusProjetosController extends AppController {
         var lista = dao.listar(proj);
         tarefas.setAll(lista);
     }
-
 
     public void abrirEquipe(ActionEvent event){
         var projeto = listProjetos.getSelectionModel().getSelectedItem();

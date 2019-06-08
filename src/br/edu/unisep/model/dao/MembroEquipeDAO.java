@@ -18,4 +18,8 @@ public class MembroEquipeDAO extends GenericDAO<MembroEquipeDAO> {
          return lista;
     }
 
+    public void salvar(){
+
+    }
+
 }
