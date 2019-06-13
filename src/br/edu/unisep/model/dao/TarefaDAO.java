@@ -4,8 +4,6 @@ import br.edu.unisep.hibernate.GenericDAO;
 import br.edu.unisep.hibernate.HibernateSessionFactory;
 import br.edu.unisep.model.vo.ProjetoVO;
 import br.edu.unisep.model.vo.TarefaVO;
-import br.edu.unisep.model.vo.UsuarioVO;
-import br.edu.unisep.utils.UsuarioUtils;
 
 import java.util.List;
 

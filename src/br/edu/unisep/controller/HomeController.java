@@ -1,4 +1,4 @@
-package br.edu.unisep.Controller;
+package br.edu.unisep.controller;
 
 import br.edu.unisep.fx.controller.AppController;
 import br.edu.unisep.utils.UsuarioUtils;

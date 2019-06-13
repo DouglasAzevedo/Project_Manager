@@ -1,4 +1,4 @@
-package br.edu.unisep.Controller;
+package br.edu.unisep.controller;
 
 import br.edu.unisep.fx.controller.ModalController;
 import br.edu.unisep.hibernate.GenericDAO;

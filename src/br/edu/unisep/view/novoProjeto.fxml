@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="478.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.unisep.Controller.NovoProjetoController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="478.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.unisep.controller.NovoProjetoController">
    <children>
       <Label layoutX="36.0" layoutY="48.0" text="Titulo:" />
       <TextField fx:id="txtTitulo" layoutX="36.0" layoutY="66.0" prefHeight="26.0" prefWidth="522.0" AnchorPane.leftAnchor="36.0" AnchorPane.rightAnchor="36.0" />

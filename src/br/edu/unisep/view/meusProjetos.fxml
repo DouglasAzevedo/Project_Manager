@@ -8,26 +8,29 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.unisep.Controller.MeusProjetosController">
-   <children>
-      <GridPane hgap="10.0" layoutX="100.0" layoutY="81.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="276.20001220703125" minWidth="10.0" prefWidth="209.40001220703124" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="393.79998779296875" minWidth="10.0" prefWidth="351.79998779296875" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-            <ListView fx:id="listTarefas" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" />
-            <ListView fx:id="listProjetos" layoutX="230.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" />
-         </children>
-      </GridPane>
-      <HBox layoutX="77.0" layoutY="316.0" prefHeight="22.0" prefWidth="572.0" spacing="15.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
-         <children>
-            <Button mnemonicParsing="false" onAction="#abrirEquipe" text="Equipe" />
-            <Button mnemonicParsing="false" text="Nova Tarefa" />
-         </children>
-      </HBox>
-   </children>
+<AnchorPane prefHeight="563.0" prefWidth="752.0" xmlns="http://javafx.com/javafx/10.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.unisep.controller.MeusProjetosController">
+    <children>
+        <GridPane hgap="10.0" layoutX="164.0" layoutY="204.0" AnchorPane.bottomAnchor="50.0"
+                  AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="30.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <children>
+                <ListView fx:id="listProjetos" prefHeight="332.0" prefWidth="294.0"/>
+                <ListView fx:id="listTarefas" prefHeight="346.0" prefWidth="411.0" GridPane.columnIndex="1"/>
+            </children>
+        </GridPane>
+        <HBox layoutX="139.0" layoutY="559.0" prefHeight="23.0" prefWidth="200.0" spacing="10.0"
+              AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
+            <children>
+                <Button mnemonicParsing="false" onAction="#abrirEquipe" text="Equipe"/>
+                <Button mnemonicParsing="false" onAction="#abrirNovaTarefa" text="Nova Tarefa"/>
+            </children>
+        </HBox>
+    </children>
 </AnchorPane>

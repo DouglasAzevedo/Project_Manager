@@ -5,7 +5,8 @@ import br.edu.unisep.model.vo.MembroEquipeVO;
 import br.edu.unisep.model.vo.ProjetoVO;
 import java.util.List;
 
-public class MembroEquipeDAO extends GenericDAO<MembroEquipeDAO> {
+public class MembroEquipeDAO extends GenericDAO<MembroEquipeVO
+        > {
 
     public List<MembroEquipeVO> listar(ProjetoVO projeto){
          var session = HibernateSessionFactory.getSession();

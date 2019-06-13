@@ -5,6 +5,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Paint;
+import javafx.scene.shape.Circle;
 
 import java.io.IOException;
 import java.time.format.DateTimeFormatter;
@@ -13,45 +15,66 @@ public class TarefaCell extends ListCell<TarefaVO> {
 
     private AnchorPane cell;
 
-    private Label titulo;
+    private Label lblTitulo;
+    private Label lblInicio;
+    private Label lblResp;
+    private Label lblTermino;
 
-    private Label responsalvel;
+    private Circle indicador;
 
-    private Label dtInicio;
+    private DateTimeFormatter fmt;
 
-    private Label dtTermino;
-
-    public TarefaCell(){
+    public TarefaCell() {
         try {
-            cell = FXMLLoader.load(getClass().getResource("item_Tarefa.fxml"));
+            cell = FXMLLoader.load(getClass().getResource("item_tarefa.fxml"));
 
-            titulo = (Label) cell.lookup("#lblTitulo");
-            responsalvel = (Label) cell.lookup("#lblResp");
-            dtInicio = (Label) cell.lookup("#lblInicio");
-            dtTermino = (Label) cell.lookup("#lblTermino");
+            lblTitulo = (Label) cell.lookup("#lblTitulo");
+            lblResp = (Label) cell.lookup("#lblResp");
+            lblInicio = (Label) cell.lookup("#lblInicio");
+            lblTermino = (Label) cell.lookup("#lblTermino");
 
-            cell.setPrefWidth(0);
-        } catch (IOException e){
+            indicador = (Circle) cell.lookup("#indicador");
+
+            fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+
+            lblInicio.setText("");
+            lblTermino.setText("");
+
+            cell.setPrefWidth(0d);
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
 
     @Override
     protected void updateItem(TarefaVO tarefa, boolean vazio) {
         super.updateItem(tarefa, vazio);
 
-        if (!vazio){
+        if (!vazio) {
 
-            titulo.setText(tarefa.getDescricao());
-            responsalvel.setText(tarefa.getUsuario().getNome());
+            lblTitulo.setText(tarefa.getDescricao());
+            lblResp.setText(tarefa.getUsuario().getNome());
 
-            var df = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-            dtInicio.setText(df.format(tarefa.getInicio()));
-            dtTermino.setText(df.format(tarefa.getTermino()));
+            if (tarefa.getStatus() != 1) {
+                lblInicio.setText(tarefa.getInicio().format(fmt));
+
+                if (tarefa.getTermino() != null) {
+                    lblTermino.setText(tarefa.getTermino().format(fmt));
+                }
+            }
+            if (tarefa.getStatus() == 1) {
+                indicador.setFill(Paint.valueOf("#4fc3f7"));
+            } else if (tarefa.getStatus() == 2) {
+                indicador.setFill(Paint.valueOf("ffb7ad"));
+            } else {
+                indicador.setFill(Paint.valueOf("#81c784"));
+            }
 
             setGraphic(cell);
         } else {
             setGraphic(null);
         }
+
     }
 }
