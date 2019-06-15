@@ -1,5 +1,4 @@
 package br.edu.unisep.view;
-
 import br.edu.unisep.model.vo.TarefaVO;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
@@ -7,21 +6,17 @@ import javafx.scene.control.ListCell;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
-
 import java.io.IOException;
 import java.time.format.DateTimeFormatter;
 
 public class TarefaCell extends ListCell<TarefaVO> {
 
     private AnchorPane cell;
-
     private Label lblTitulo;
     private Label lblInicio;
     private Label lblResp;
     private Label lblTermino;
-
     private Circle indicador;
-
     private DateTimeFormatter fmt;
 
     public TarefaCell() {
@@ -45,7 +40,6 @@ public class TarefaCell extends ListCell<TarefaVO> {
             e.printStackTrace();
         }
     }
-
 
     @Override
     protected void updateItem(TarefaVO tarefa, boolean vazio) {
@@ -77,4 +71,5 @@ public class TarefaCell extends ListCell<TarefaVO> {
         }
 
     }
+
 }

@@ -26,6 +26,9 @@ public class HomeController extends AppController {
         if (UsuarioUtils.getUsuario().getTipo() == 2){
             txtPagina.setText("Meus Projetos");
             openScene(container, "../view/meusProjetos.fxml");
+        }else{
+            txtPagina.setText("Minhas Tarefas");
+            openScene(container,"../view/minhasTarefas.fxml");
         }
         configurarMenu();
     }

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="cell" prefHeight="81.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.edu.unisep.view.ItemNaoiniciado">
+   <children>
+      <Label fx:id="lblDescricao" layoutX="42.0" layoutY="14.0" prefHeight="30.0" prefWidth="222.0" text="Descrição da Tarefa">
+         <font>
+            <Font name="Myanmar Text" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblProjeto" layoutX="42.0" layoutY="50.0" text="Projeto">
+         <font>
+            <Font name="Myanmar Text" size="12.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
