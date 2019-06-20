@@ -32,8 +32,8 @@ public class MinhasTarefasController extends AppController {
     private ObservableList<TarefaVO> tarefasMeio;
     private ObservableList<TarefaVO> tarefasFim;
 
-    private ListView origemDragInicio;
-    private ListView origemDragMeio;
+    private ListView origemDrag;
+
 
 
     @Override
@@ -79,7 +79,8 @@ public class MinhasTarefasController extends AppController {
         content.putString(String.valueOf(pos));
 
         dragboard.setContent(content);
-        origemDragInicio = listNaoIniciado;
+
+        origemDrag = listNaoIniciado;
         event.consume();
     }
 
@@ -92,7 +93,8 @@ public class MinhasTarefasController extends AppController {
         content.putString(String.valueOf(pos));
 
         dragboard.setContent(content);
-        origemDragMeio = listEmAndamento;
+
+        origemDrag = listEmAndamento;
         event.consume();
     }
 
@@ -102,11 +104,11 @@ public class MinhasTarefasController extends AppController {
     }
 
     public void dropMeio(DragEvent event) {
-        if (origemDragInicio == listNaoIniciado) {
+        if (origemDrag == listNaoIniciado) {
             var dragboard = event.getDragboard();
             var pos = dragboard.getString();
 
-            var tarefa = tarefasMeio.get(Integer.parseInt(pos));
+            var tarefa = tarefasInicio.get(Integer.parseInt(pos));
 
             var dao = new TarefaDAO();
             tarefa.setStatus(2);
@@ -121,11 +123,11 @@ public class MinhasTarefasController extends AppController {
     }
 
     public void dropFim(DragEvent event) {
-        if (origemDragMeio == listEmAndamento) {
+        if (origemDrag == listEmAndamento) {
             var dragboard = event.getDragboard();
             var pos = dragboard.getString();
 
-            var tarefa = tarefasFim.get(Integer.parseInt(pos));
+            var tarefa = tarefasMeio.get(Integer.parseInt(pos));
 
             var dao = new TarefaDAO();
             tarefa.setStatus(3);
