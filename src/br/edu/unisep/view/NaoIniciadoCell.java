@@ -1,6 +1,5 @@
 package br.edu.unisep.view;
 
-import br.edu.unisep.model.vo.ProjetoVO;
 import br.edu.unisep.model.vo.TarefaVO;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
@@ -17,14 +16,16 @@ public class NaoIniciadoCell extends ListCell<TarefaVO> {
 
     public NaoIniciadoCell(){
         try {
-            cell = FXMLLoader.load(getClass().getResource("item_Naoiniciado.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("item_Naoiniciado.fxml"));
+            cell = loader.load();
 
-            lblDescricao = (Label) cell.lookup("lblDescricao");
-            lblProjeto = (Label) cell.lookup("lblProjeto");
+            lblDescricao = (Label) cell.lookup("#lblDescricao");
+            lblProjeto = (Label) cell.lookup("#lblProjeto");
 
             lblDescricao.setText("");
             lblProjeto.setText("");
 
+            cell.setPrefWidth(0d);
         } catch (IOException e) {
             e.printStackTrace();
         }

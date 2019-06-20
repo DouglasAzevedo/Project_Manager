@@ -24,11 +24,11 @@ public class GenericCell extends ListCell<TarefaVO> {
         try {
             cell = FXMLLoader.load(getClass().getResource("project_Generic.fxml"));
 
-            lblDescricao = (Label) cell.lookup("lblDescricao");
-            lblProjeto = (Label) cell.lookup("lblProjeto");
-            lblText = (Label) cell.lookup("lblText");
-            lblIniciado = (Label) cell.lookup("lblIniciado");
-            lblTermino = (Label) cell.lookup("lblTermino");
+            lblDescricao = (Label) cell.lookup("#lblDescricao");
+            lblProjeto = (Label) cell.lookup("#lblProjeto");
+            lblText = (Label) cell.lookup("#lblText");
+            lblIniciado = (Label) cell.lookup("#lblIniciado");
+            lblTermino = (Label) cell.lookup("#lblTermino");
 
             fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 
